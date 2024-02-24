@@ -1,0 +1,50 @@
+<section class="mx-auto mt-16 flex animate-fade-in flex-col place-items-center text-center text-primary animate-delay-[2s] md:mt-32">
+    <h2 class="uppercase text-5xl font-semibold ">
+        4 de Marzo
+        <span arial-hidden class="hidden md:inline mx-1">.</span> 
+        <br arial-hidden class="block md:hidden" />
+        <span>
+            <script is:inline>
+                const END_DATE = 1709600400000
+                const d = new Date(END_DATE)
+                const date = d.toLocaleTimeString("es",{
+                    hour:"2-digit",                    
+                    minute:"2-digit"
+                })
+
+                // GET CURRENT TIMEZONE
+                const tzOffset = d.getTimezoneOffset() / 60
+                const diff = tzOffset * - 1
+                const gmt = diff >  0 ? `GMT+${diff}` : `GMT-${Math.abs(diff)}` 
+
+                const TZ_DICTIONARY = {
+                    "GTM+1":"CET" ,
+                    "GMT-6":"MEX"
+                }
+
+                const tz = TZ_DICTIONARY[gmt] ?? gmt
+
+                const selfScript = document.currentScript
+                selfScript.parentNode.innerHTML = `${date}H ${tz}`
+            </script>
+        </span>
+    </h2>
+
+    <h3 class="uppercase text-2xl font-medium flex flex-col max-w-sm mt-6">
+        <span>Evento de Presentación</span>
+        <span>Teatro Victoria (Barcelona)</span>
+    </h3>
+    
+    
+    <a class={`
+        border-primary border-2 font-medium uppercase text-lg
+        px-6 py-1 mt-8
+        hover:bg-secondary hover:scale-125
+    `} 
+    target="_blank" 
+    rel="nooponer noreferrer" 
+    href="https://www.teatrevictoria.com/es/cartelera/c/190_la-velada-del-ano-4.html"
+    >
+        Entradas agotadas
+    </a>
+</section>

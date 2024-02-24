@@ -1,0 +1,31 @@
+---
+import InstagramIcon from "@/icons/instagram.astro"
+import XIcon from "@/icons/x.astro"
+---
+<footer class="w-full border-primary border-t-2 flex flex-col md:flex-row justify-center items-center md:justify-between pt-10 pb-20 gap-y-10">
+    <span class="text-primary text-center">
+        © 2024 La Velada del Año <span arial-hidden class="hidden md:inline mx-1">|</span> <br arial-hidden class="block md:hidden" > Todos los derechos reservados.
+    </span>
+    <ul class="flex flex-row gap-x-6 items-center">
+        <li>
+            <a  
+            target="_blank"
+            rel="noopener"            
+            href="https://www.instagram.com/infolavelada"
+            class="hover:scale-125 hover:opacity-70 transition inline-block"
+            >
+                <InstagramIcon class="text-primary" />
+            </a>
+        </li>
+        <li>
+            <a 
+            target="_blank"
+            rel="noopener" 
+            href="https://x.com/infoLaVelada"
+            class="hover:scale-125 hover:opacity-70 transition inline-block"
+            >
+                <XIcon />
+            </a>    
+        </li>
+    </ul>
+</footer>
